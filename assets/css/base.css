@@ -1,0 +1,349 @@
+/*
+================================
+======= Table of Content =======
+================================
+    0. Reset Styles
+    1. Root Variables
+    3. Global Styles
+    4. Layouts
+    5. Media Queries
+================================
+*/
+
+/* ========== 0. Reset Styles ========== */
+
+/* 1. Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin && padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== 1. Root Variables ========== */
+:root {
+  /* ---------- THEME COLORS ---------- */
+  --color-primary: #0065f8;
+  --color-secondary: #00caff;
+  --color-tertiary: #00ffde;
+
+  /* Background colors */
+  --site-bg-gradient: linear-gradient(to bottom, var(--color-secondary), var(--color-primary));
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #121212;
+
+  /* Text colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-inverse: #ffffff;
+
+
+  /* ---------- TYPOGRAPHY ---------- */
+  /* Font families */
+  --font-family-base: 'Poppins', sans-serif;
+  --font-family-heading: 'Montserrat', sans-serif;
+  --font-family-code: 'Fira Code', monospace;
+
+  /* Font sizes (1rem = 16px) */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-md: 1rem;
+  /* 16px (base) */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.5rem;
+  /* 24px */
+  --font-size-xxl: 2rem;
+  /* 32px */
+  --font-size-xxxl: 3.5rem;
+  /* 48px */
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line heights */
+  --line-height-sm: 1.2;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.8;
+
+  /* ---------- SPACING (Margin & Padding ---------- */
+  --spacing-xxs: 0.25rem;
+  /* 4px */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 0.75rem;
+  /* 12px */
+  --spacing-md: 1rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
+  --spacing-xxl: 3rem;
+  /* 48px */
+  --spacing-xxxl: 6rem;
+  /* 96px */
+
+  /* ---------- BORDER RADIUS ---------- */
+  --radius-sm: 0.25rem;
+  /* 4px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-full: 50%;
+  /* Circle */
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 4px 4px 4px #0065f8;
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+  /* ---------- TRANSITIONS ---------- */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.8s ease;
+}
+
+/* ---------- DARK MODE THEME ---------- */
+[data-theme="dark"] {
+  /* Main background gradient for dark mode */
+  --site-bg-gradient: linear-gradient(180deg, #0a192f 0%, #00111f 100%);
+}
+
+/* ========== 3. Global Styles ========== */
+
+/* 1. Body & Typography */
+/* Arabic support */
+html[lang="ar"] body {
+  font-family: 'Almarai', sans-serif;
+  direction: rtl;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  color: var(--color-text-primary);
+  background: var(--site-bg-gradient);
+  direction: ltr;
+  text-align: left;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+  z-index: -1000;
+}
+
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  animation: fall linear forwards;
+}
+
+.inner {
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sway ease-in-out infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Arabic headings */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+
+/* Images*/
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Forms */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Buttons default */
+button {
+  cursor: pointer;
+}
+
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ========== 4. Layouts ========== */
+/* Mobile-first: single column grid */
+.site {
+  display: grid;
+  min-height: 100vh;
+
+  /* mobile: header, main, footer (single column) */
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr auto;
+}
+
+/* Areas assignment */
+.site__header {
+  grid-area: header;
+}
+
+.site__aside {
+  grid-area: aside;
+}
+
+.site__main {
+  grid-area: main;
+}
+
+.site__footer {
+  grid-area: footer;
+}
+
+.container {
+  width: 100%;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* ========== 5. Media Queries ========== */
+/* ---------- Container ----------*/
+/* Small devices (>= 576px) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Medium devices (>= 768px) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Large devices (>= 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra large devices (>= 1440px) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* responsive padding adjustments */
+@media (max-width: 576px) {
+  .container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+/* ---------- Grid layout ----------*/
+/* Grid layout for medium and larger screens (≥768px): header spans full width, sidebar on the left, main content on the right, footer at the bottom */
+@media (min-width: 768px) {
+  .site {
+    grid-template-areas:
+      "header header"
+      "aside  main"
+      "footer footer";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 60px 1fr auto;
+  }
+}

@@ -1,0 +1,156 @@
+/* ===============================
+   FONTS: Self-hosted
+=============================== */
+
+/* ---------- Montserrat (English Headings) ---------- */
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+        url('../../assets/fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/montserrat/Montserrat-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+        url('../../assets/fonts/montserrat/Montserrat-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/montserrat/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------- Poppins (English Body) ---------- */
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Bold'), local('Poppins-Bold'),
+        url('../../assets/fonts/poppins/Poppins-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/poppins/Poppins-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+        url('../../assets/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/poppins/Poppins-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------- Almarai (Arabic Body) ---------- */
+@font-face {
+    font-family: 'Almarai';
+    src: local('Almarai Bold'), local('Almarai-Bold'),
+        url('../../assets/fonts/almarai/Almarai-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/almarai/Almarai-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: local('Almarai Regular'), local('Almarai-Regular'),
+        url('../../assets/fonts/almarai/Almarai-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/almarai/Almarai-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------- Cairo (Arabic Headings) ---------- */
+@font-face {
+    font-family: 'Cairo';
+    src: local('Cairo Bold'), local('Cairo-Bold'),
+        url('../../assets/fonts/cairo/Cairo-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/cairo/Cairo-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: local('Cairo Regular'), local('Cairo-Regular'),
+        url('../../assets/fonts/cairo/Cairo-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/cairo/Cairo-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------- Fira Code (Code Sections) ---------- */
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Bold'), local('FiraCode-Bold'),
+        url('../../assets/fonts/fira-code/FiraCode-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/fira-code/FiraCode-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Regular'), local('FiraCode-Regular'),
+        url('../../assets/fonts/fira-code/FiraCode-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/fira-code/FiraCode-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===============================
+   LANGUAGE STYLES
+=============================== */
+
+/* Default: English */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    direction: ltr;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* English Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Code sections */
+code,
+pre {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+}
+
+/* Arabic */
+html[lang="ar"] body {
+    font-family: 'Almarai', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+}
