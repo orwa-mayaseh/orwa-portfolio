@@ -31,7 +31,10 @@
    Text content styles
 ----------------------------- */
 .hero__content {
-  animation: fadeSlideIn var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__title {
@@ -42,7 +45,6 @@
   position: relative;
   width: fit-content;
 }
-
 
 .hero__title::before {
   content: attr(data-text);
@@ -60,7 +62,6 @@
 
 }
 
-
 .hero__subtitle {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
@@ -71,8 +72,9 @@
 .hero__description {
   font-family: var(--font-family-base);
   color: var(--color-text-inverse);
-  opacity: 0.85;
-  margin: var(--spacing-md) 0;
+  text-transform: capitalize;
+  padding: 0 var(--spacing-sm);
+  text-align: center;
 }
 
 /* -----------------------------
@@ -132,7 +134,6 @@
 }
 
 /* Gears and code icons (absolute positioned) */
-
 /* Large gear */
 .hero__gear--big {
   grid-area: gearl;
@@ -148,7 +149,6 @@
   position: absolute;
   top: -30%;
 }
-
 
 /* code icon */
 .hero__code {
@@ -190,18 +190,6 @@
     transform: rotate(0deg);
   }
 }
-
-/* @keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 
 /* =========================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)

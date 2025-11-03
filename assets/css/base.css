@@ -108,7 +108,7 @@
 
   /* ---------- SHADOWS ---------- */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 4px 4px 4px #0065f8;
+  --shadow-md: 0px 0px 4px 4px #0065f8;
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
 
   /* ---------- TRANSITIONS ---------- */
@@ -147,7 +147,7 @@ body {
   z-index: -1000;
 }
 
-
+/* Snowflake animation */
 .snowflake {
   position: absolute;
   top: -10px;
@@ -294,7 +294,6 @@ html {
   padding-right: var(--spacing-md);
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box;
 }
 
 /* ========== 5. Media Queries ========== */
@@ -327,14 +326,6 @@ html {
   }
 }
 
-/* responsive padding adjustments */
-@media (max-width: 576px) {
-  .container {
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
-  }
-}
-
 /* ---------- Grid layout ----------*/
 /* Grid layout for medium and larger screens (≥768px): header spans full width, sidebar on the left, main content on the right, footer at the bottom */
 @media (min-width: 768px) {
@@ -343,7 +334,7 @@ html {
       "header header"
       "aside  main"
       "footer footer";
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 60px 1fr;
     grid-template-rows: 60px 1fr auto;
   }
 }

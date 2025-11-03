@@ -35,20 +35,21 @@
 .site__menu-toggle,
 .site__lang-toggle,
 .site__theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 2.5rem;
     height: 2.5rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: var(--font-size-lg);
-    color: var(--color-primary);
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-md);
 }
 
-i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.site__header-icon,
+.site__aside-icon {
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+
 }
 
 /* ========== 1. Aside ========== */
@@ -56,17 +57,17 @@ i {
     position: fixed;
     top: 60px;
     left: 0;
-    width: 40vw;
-    height: calc(100vh - 60px);
+    z-index: 1000;
+    min-height: calc(100vh - 60px);
     padding: var(--spacing-md);
-    transform: translateX(-110%);
-    transition: transform var(--transition-normal) ease, opacity 0.3s ease;
     visibility: hidden;
     opacity: 0;
+    transform: translateY(-110%);
+    transition: var(--transition-slow);
 }
 
 .site__aside.asideIsOpen {
-    transform: translateX(0);
+    transform: translateY(0);
     visibility: visible;
     opacity: 1;
 }
@@ -74,17 +75,25 @@ i {
 .site__aside-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .site__aside-link {
-    max-width: 50%;
-    padding: var(--spacing-md) var(--spacing-sm);
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--spacing-xs);
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
     position: relative;
+}
+
+.site__aside-tooltip {
+    display: none;
 }
 
 /* ========== 5. Media Queries ========== */
@@ -110,13 +119,11 @@ i {
         opacity: 1;
     }
 
+    .site__aside-list {
+        gap: var(--spacing-xl);
+    }
     .site__aside-icon {
         font-size: var(--font-size-xl);
-    }
-
-    .site__aside-link {
-        justify-content: flex-start;
-        gap: 0;
     }
 
     .site__aside-link:hover .site__aside-tooltip {
@@ -125,6 +132,7 @@ i {
     }
 
     .site__aside-tooltip {
+        display: inline;
         position: absolute;
         top: 20%;
         right: -400%;

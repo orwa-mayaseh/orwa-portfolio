@@ -37,10 +37,10 @@ navLinks.forEach(link => link.addEventListener("click", () => {
   isAsideOpen = false;
 }));
 /*################################################################## */
-// Hero Section / snow flake
+//Snow flake
 
-//  Select the hero section
-const hero = document.querySelector("body");
+//  Select the 
+const site = document.querySelector(".site");
 
 const createSnowflake = () => {
   const snowFlake = document.createElement("span");
@@ -64,7 +64,7 @@ const createSnowflake = () => {
   inner.style.animationDuration = `${Math.random() * 3 + 2}s`;
 
   snowFlake.appendChild(inner);
-  hero.appendChild(snowFlake);
+  site.appendChild(snowFlake);
 
   setTimeout(() => {
     snowFlake.remove();
