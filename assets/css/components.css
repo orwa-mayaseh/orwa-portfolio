@@ -14,10 +14,9 @@
 /* ========== 0. Header ========== */
 .site__header {
     background-color: transparent;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 9999;
 }
 
 .site__header .container {
