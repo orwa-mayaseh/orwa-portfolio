@@ -6,7 +6,7 @@
 ================================
 */
 
-/* 2. HERO SECTION*/
+/* 0. HERO SECTION*/
 
 .hero {
   display: flex;
@@ -23,7 +23,7 @@
   max-width: 768px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xxl);
 }
 
 

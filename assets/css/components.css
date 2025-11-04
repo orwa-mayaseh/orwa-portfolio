@@ -104,6 +104,9 @@
         justify-content: flex-end;
     }
 
+    .site__controls {
+        width: 100px;
+    }
     .site__menu-toggle {
         display: none;
     }
@@ -134,13 +137,13 @@
     .site__aside-tooltip {
         display: inline;
         position: absolute;
-        top: 20%;
-        right: -400%;
+        top: 0;
+        right: -220%;
         opacity: 0;
         visibility: hidden;
         background-color: var(--color-bg-dark);
         color: var(--color-text-inverse);
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius-md);
         width: 4.5rem;
         padding: var(--spacing-xxs);
         text-transform: capitalize;
