@@ -14,8 +14,10 @@
 /* ========== 0. Header ========== */
 .site__header {
     background-color: transparent;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
 }
 
 .site__header .container {
@@ -49,7 +51,6 @@
     color: var(--color-text-inverse);
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
-
 }
 
 /* ========== 1. Aside ========== */
