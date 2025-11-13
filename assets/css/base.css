@@ -125,9 +125,21 @@
 
 /* ========== 3. Global Styles ========== */
 
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* 1. Body & Typography */
 /* Arabic support */
-html[lang="ar"] body {
+html[dir="ar"] body {
   font-family: 'Almarai', sans-serif;
   direction: rtl;
 }
@@ -139,10 +151,7 @@ body {
   line-height: var(--line-height-md);
   color: var(--color-text-primary);
   background: var(--site-bg-gradient);
-  direction: ltr;
-  text-align: left;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -158,7 +167,6 @@ body {
   display: block;
   background: #fff;
   border-radius: 50%;
-  opacity: 0.8;
   animation: sway ease-in-out infinite;
 }
 
@@ -250,17 +258,10 @@ button {
 }
 
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-
 /* ========== 4. Layouts ========== */
 /* Mobile-first: single column grid */
 .site {
   display: grid;
-  min-height: 100vh;
 
   /* mobile: header, main, footer (single column) */
   grid-template-areas:
@@ -287,6 +288,7 @@ html {
 .site__footer {
   grid-area: footer;
 }
+
 
 .container {
   width: 100%;
@@ -337,4 +339,13 @@ html {
     grid-template-columns: 60px 1fr;
     grid-template-rows: 60px 1fr auto;
   }
+
+  html[dir="rtl"] .site {
+  /*switch the order of columns: make the first column main and the second column aside */
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-columns: 1fr 60px; /* main then aside */
+}
 }

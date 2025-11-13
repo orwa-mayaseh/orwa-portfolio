@@ -12,7 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  max-height: 100vh;
+  padding: var(--spacing-xxxl) 0 ;
   overflow: hidden;
 }
 
@@ -59,6 +60,14 @@
   overflow: hidden;
   white-space: nowrap;
   animation: ani 8s linear infinite;
+
+}
+html[dir="rtl"] .hero__title::before {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 3px solid var(--color-primary, #00d8ff);
+  text-shadow: 0 0 25px rgba(255, 255, 222, 0.7);
 
 }
 
@@ -113,6 +122,7 @@
    Images and decorative icons
 ----------------------------- */
 .hero__images {
+  direction: ltr !important;
   width: 100%;
   min-height: max;
   display: grid;
@@ -120,7 +130,7 @@
   grid-template-rows:  1fr 1fr 1fr;
   grid-template-areas: ". gearl gearl gearl avatar avatar avatar"
                         ". gearl gearl gearl avatar avatar avatar"
-                       ". gears code . avatar avatar avatar";
+                       ". gears code . avatar avatar avatar" ;
   position: relative;
   animation: fadeSlideIn var(--transition-slow);
 }
@@ -271,7 +281,7 @@
 }
 
 /* ---------- 425px (large phones) ---------- */
-@media (min-width: 376px) and (max-width: 425px) {
+@media (min-width: 376px) and (max-width: 767px) {
   .hero__title {
     font-size: 2rem;
   }

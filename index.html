@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
@@ -19,19 +19,19 @@
   <header class="site__header">
     <div class="container">
       <!-- Hamburger menu button (toggles sidebar navigation on mobile) -->
-      <button class="site__menu-toggle" aria-label="Toggle menu">
+      <button class="site__menu-toggle site__btn" aria-label="Toggle menu">
         <i class="fa-solid fa-bars site__header-icon"></i>
         <!-- <i class="fa-solid fa-xmark"></i> -->
       </button>
 
       <div class="site__controls">
         <!-- Language switcher -->
-        <button class="site__lang-toggle">
+        <button class="site__lang-toggle site__btn">
           <i class="fa-solid fa-language site__header-icon"></i>
         </button>
 
         <!-- Theme switcher -->
-        <button class="site__theme-toggle" aria-label="Toggle theme">
+        <button class="site__theme-toggle site__btn" aria-label="Toggle theme">
           <i class="fa-regular fa-moon site__header-icon"></i>
           <!-- <i class="fa-regular fa-sun"></i> -->
         </button>
@@ -47,31 +47,31 @@
         <li class="site__aside-item">
           <a href="#hero" class="site__aside-link">
             <i class="fa-solid fa-house site__aside-icon"></i>
-            <span class="site__aside-tooltip">home</span>
+            <span class="site__aside-tooltip" data-i18n="tooltip_home">home</span>
           </a>
         </li>
         <li class="site__aside-item">
           <a href="#about" class="site__aside-link">
             <i class="fa-solid fa-user site__aside-icon"></i>
-            <span class="site__aside-tooltip">about</span>
+            <span class="site__aside-tooltip" data-i18n="tooltip_about">about</span>
           </a>
         </li>
         <li class="site__aside-item">
           <a href="#skills" class="site__aside-link">
             <i class="fa-solid fa-screwdriver-wrench site__aside-icon"></i>
-            <span class="site__aside-tooltip">skills</span>
+            <span class="site__aside-tooltip" data-i18n="tooltip_skills">skills</span>
           </a>
         </li>
         <li class="site__aside-item">
           <a href="#projects" class="site__aside-link">
             <i class="fa-solid fa-code site__aside-icon"></i>
-            <span class="site__aside-tooltip">projects</span>
+            <span class="site__aside-tooltip" data-i18n="tooltip_projects">projects</span>
           </a>
         </li>
         <li class="site__aside-item">
           <a href="#contact" class="site__aside-link">
             <i class="fa-solid fa-envelope site__aside-icon"></i>
-            <span class="site__aside-tooltip">contact</span>
+            <span class="site__aside-tooltip" data-i18n="tooltip_contact">contact</span>
           </a>
         </li>
       </ul>
@@ -87,16 +87,17 @@
       <div class="container">
         <!-- Content -->
         <div class="hero__content">
-          <h1 data-text="Hi, I'm Orwa Mayasah" class="hero__title">Hi, I'm Orwa Mayasah</h1>
-          <h2 class="hero__subtitle">front-end developer</h2>
-          <p class="hero__description">
-            I craft interactive and responsive web interfaces with a focus on performance and user experience.
+          <h1 data-i18n="hero_title" data-text="Hi, I'm Orwa Mayasah" class="hero__title">Hi, I'm Orwa Mayasah</h1>
+          <h2 data-i18n="hero_subtitle" class="hero__subtitle">Front-End Developer & UI Enthusiast</h2>
+          <p data-i18n="hero_desc" class="hero__description">
+            I build fast, accessible, and visually engaging web experiences focused on performance and user delight.
           </p>
 
           <div class="hero__actions">
-            <a href="#" class="hero__btn hero__btn--primary">View Projects</a>
-            <a href="#" class="hero__btn hero__btn--secondary">Contact Me</a>
+            <a data-i18n="btn_projects" href="#" class="hero__btn hero__btn--primary">View Projects</a>
+            <a data-i18n="btn_contact" href="#" class="hero__btn hero__btn--secondary">Contact Me</a>
           </div>
+
         </div>
 
         <!-- Images -->
@@ -110,11 +111,10 @@
     </section>
     <!-- Hero Section: END -->
 
-
     <!-- About section: START-->
     <section id="about" class="about">
       <div class="container">
-        <!-- about content -->
+
       </div>
     </section>
     <!-- About section: END -->
@@ -148,7 +148,6 @@
   <!-- Footer: START -->
   <footer class="site__footer">
     <div class="container">
-      <p>&copy; 2025 Orwa Mayaseh. All Rights Reserved.</p>
     </div>
   </footer>
   <!-- Footer: END -->

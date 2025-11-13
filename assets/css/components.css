@@ -33,9 +33,7 @@
     align-items: center;
 }
 
-.site__menu-toggle,
-.site__lang-toggle,
-.site__theme-toggle {
+.site__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +41,11 @@
     height: 2.5rem;
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.site__btn:hover {
+    transform: scale(1.1);
 }
 
 .site__header-icon,
@@ -66,6 +69,10 @@
     transition: var(--transition-slow);
 }
 
+html[dir="rtl"] .site__aside {
+    left: auto;
+    right: 0;
+}
 .site__aside.asideIsOpen {
     transform: translateY(0);
     visibility: visible;
@@ -90,6 +97,11 @@
     box-shadow: var(--shadow-md);
     padding: var(--spacing-md);
     position: relative;
+    transition: var(--transition-normal);
+}
+
+.site__aside-link:hover {
+    transform: scale(1.1);
 }
 
 .site__aside-tooltip {
@@ -107,6 +119,7 @@
     .site__controls {
         width: 100px;
     }
+
     .site__menu-toggle {
         display: none;
     }
@@ -123,16 +136,13 @@
     }
 
     .site__aside-list {
-        gap: var(--spacing-xl);
+        gap: var(--spacing-xxl);
     }
+
     .site__aside-icon {
         font-size: var(--font-size-xl);
     }
 
-    .site__aside-link:hover .site__aside-tooltip {
-        opacity: 1;
-        visibility: visible;
-    }
 
     .site__aside-tooltip {
         display: inline;
@@ -143,18 +153,19 @@
         visibility: hidden;
         background-color: var(--color-bg-dark);
         color: var(--color-text-inverse);
-        border-radius: var(--radius-md);
-        width: 4.5rem;
+        border-radius: var(--radius-xl);
+        width: 4.8rem;
         padding: var(--spacing-xxs);
         text-transform: capitalize;
+        text-align: center;
+    }
+    html[dir="rtl"] .site__aside-tooltip {
+        right: auto;
+        left: -220%;
     }
 
-    .site__aside-tooltip::before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: -15px;
-        border: 8px solid transparent;
-        border-right-color: var(--color-bg-dark);
+    .site__aside-link:hover .site__aside-tooltip {
+        opacity: 1;
+        visibility: visible;
     }
 }
