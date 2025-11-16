@@ -2,69 +2,63 @@
 // Language Toggle (English / Arabic)
 // ===============================
 export function initLangToggle({ translations, defaultLang = "en" } = {}) {
-  // Get saved language from localStorage or use default
+  // Load saved language from localStorage, or use default
   const savedLang = localStorage.getItem("lang");
   const currentLang = savedLang || defaultLang;
 
-  // Update the document language and direction
-  document.documentElement.setAttribute("lang", currentLang);
-  document.documentElement.setAttribute(
-    "dir",
-    currentLang === "ar" ? "rtl" : "ltr"
-  );
+  // -------------------------------
+  // Helper Function:
+  // Apply a given language to the document
+  // -------------------------------
+  function applyLanguage(lang) {
+    // Set HTML language attribute
+    document.documentElement.setAttribute("lang", lang);
 
-  // select all elements with data-i18n attribute
-  const i18nElements = document.querySelectorAll("[data-i18n]");
+    // Set direction based on the language
+    document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
 
-  i18nElements.forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[key] && translations[key][currentLang]) {
-      const text = translations[key][currentLang];
-      el.textContent = text;
-      if (element.hasAttribute("data-text")) {
-        element.setAttribute("data-text", text);
-      }
-    }
-  });
+    // Select all elements that contain data-i18n (translatable elements)
+    const i18nElements = document.querySelectorAll("[data-i18n]");
 
-  // Handle language toggle button click
-  const langToggleBtn = document.querySelector(".site__lang-toggle");
-
-  if (!langToggleBtn) return; // Exit if button not found
-
-  // Add click event listener to toggle language
-  langToggleBtn.addEventListener("click", () => {
-    // Read the current language directly from <html>
-    const currentLang = document.documentElement.getAttribute("lang");
-    const newLang = currentLang === "ar" ? "en" : "ar";
-
-    // Save new language
-    localStorage.setItem("lang", newLang);
-
-    // Apply new language and direction
-    document.documentElement.setAttribute("lang", newLang);
-    document.documentElement.setAttribute(
-      "dir",
-      newLang === "ar" ? "rtl" : "ltr"
-    );
-
-    // Update all i18n elements
+    // Update all translation-enabled elements
     i18nElements.forEach((element) => {
       const key = element.dataset.i18n;
-      if (translations[newLang] && translations[newLang][key]) {
-        const text = translations[newLang][key];
+      const text = translations[lang][key];
+
+      // If translation exists → apply it
+      if (text) {
         element.textContent = text;
+
+        // If the element uses data-text (for glowing/typing animation)
         if (element.hasAttribute("data-text")) {
           element.setAttribute("data-text", text);
         }
       }
     });
+  }
 
-    // i18nElements.forEach((element) => {
-    //   const key = element.dataset.i18n;
-    //   if (translations[newLang] && translations[newLang][key]) {
-    //     element.textContent = translations[newLang][key];
-    //   }
-    // });
+  // -------------------------------
+  // Apply language on first page load
+  // -------------------------------
+  applyLanguage(currentLang);
+
+  // -------------------------------
+  // Handle language switch button
+  // -------------------------------
+  const langToggleBtn = document.querySelector(".site__lang-toggle");
+  if (!langToggleBtn) return; // Exit if button not found
+
+  langToggleBtn.addEventListener("click", () => {
+    // Get the currently applied language from <html>
+    const current = document.documentElement.getAttribute("lang");
+
+    // Toggle between Arabic and English
+    const newLang = current === "ar" ? "en" : "ar";
+
+    // Save new language to localStorage
+    localStorage.setItem("lang", newLang);
+
+    // Apply the new language
+    applyLanguage(newLang);
   });
 }

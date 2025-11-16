@@ -3,6 +3,7 @@
 ======= Table of Content =======
 ================================
     0. Hero Sections
+    1. About Section
 ================================
 */
 
@@ -12,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
   max-height: 100vh;
   padding: var(--spacing-xxxl) 0 ;
   overflow: hidden;

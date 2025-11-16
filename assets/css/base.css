@@ -131,7 +131,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -139,10 +140,6 @@ html, body {
 
 /* 1. Body & Typography */
 /* Arabic support */
-html[dir="ar"] body {
-  font-family: 'Almarai', sans-serif;
-  direction: rtl;
-}
 
 body {
   font-family: var(--font-family-base);
@@ -151,8 +148,13 @@ body {
   line-height: var(--line-height-md);
   color: var(--color-text-primary);
   background: var(--site-bg-gradient);
-  overflow-y: auto;
   position: relative;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Almarai', sans-serif;
+  direction: rtl;
+  overflow: hidden;
 }
 
 /* Snowflake animation */
@@ -172,7 +174,7 @@ body {
 
 @keyframes fall {
   to {
-    transform: translateY(110vh);
+    transform: translateY(200vh);
   }
 }
 
@@ -217,6 +219,7 @@ html[lang="ar"] h6 {
 p {
   margin-bottom: var(--spacing-md);
   font-size: var(--font-size-md);
+  font-family: inherit;
   color: var(--color-text-secondary);
 }
 
@@ -227,6 +230,8 @@ ul {
 /* Links */
 a {
   text-decoration: none;
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 
@@ -292,12 +297,9 @@ button {
 
 .container {
   width: 100%;
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 var(--spacing-md);
+  margin: 0 auto;
 }
-
 /* ========== 5. Media Queries ========== */
 /* ---------- Container ----------*/
 /* Small devices (>= 576px) */
@@ -341,11 +343,12 @@ button {
   }
 
   html[dir="rtl"] .site {
-  /*switch the order of columns: make the first column main and the second column aside */
-  grid-template-areas:
-    "header header"
-    "main aside"
-    "footer footer";
-  grid-template-columns: 1fr 60px; /* main then aside */
-}
+    /*switch the order of columns: make the first column main and the second column aside */
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 1fr 60px;
+    /* main then aside */
+  }
 }
