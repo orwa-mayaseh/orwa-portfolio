@@ -1,0 +1,163 @@
+/* =========================================
+   SKILLS SECTION 
+========================================= */
+
+.skills {
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skills__title {
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skills__subtitle {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: #e6e6e6;
+  max-width: 650px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+/* ==========================
+    Groups Wrapper
+========================== */
+.skills__groups {
+  display: grid;
+  gap: var(--spacing-xxl);
+}
+
+/* ==========================
+    Group Title
+========================== */
+.skills__group-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-inverse);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.skills__group-title::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--color-tertiary);
+  border-radius: var(--radius-full);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* RTL fix */
+html[dir="rtl"] .skills__group-title {
+  padding-right: 1rem;
+}
+html[dir="rtl"] .skills__group-title::before {
+  left: auto;
+  right: 0;
+}
+
+/* ==========================
+    Skill Items Grid
+========================== */
+.skills__items {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+  .skills__items {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* ==========================
+    Skill Card
+========================== */
+.skill__card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: default;
+}
+
+.skill__card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0px 0px 20px rgba(0, 200, 255, 0.35),
+    0px 0px 25px rgba(0, 100, 255, 0.4);
+}
+
+/* Glow circle inside card */
+.skill__card::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, var(--color-secondary), transparent 70%);
+  border-radius: var(--radius-full);
+  top: -60px;
+  right: -60px;
+  filter: blur(40px);
+  opacity: 0.35;
+  transition: opacity var(--transition-fast);
+}
+
+.skill__card:hover::before {
+  opacity: 0.6;
+}
+
+/* ==========================
+    Skill Icon (FontAwesome)
+========================== */
+.skill__icon i {
+  font-size: 2.2rem;
+  color: var(--color-tertiary);
+  margin-bottom: var(--spacing-sm);
+  display: inline-block;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.skill__card:hover .skill__icon i {
+  color: var(--color-primary);
+  transform: scale(1.15);
+}
+
+/* ==========================
+    Skill Name
+========================== */
+.skill__card h4 {
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+/* ==========================
+    Progress Bar
+========================== */
+.skill__bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.skill__bar span {
+  display: block;
+  height: 100%;
+  width: 0%; /* Start from 0% */
+  background: linear-gradient(90deg, var(--color-tertiary), var(--color-primary));
+  border-radius: var(--radius-full);
+  transition: width 1.2s ease-out; /* Smooth animation */
+}

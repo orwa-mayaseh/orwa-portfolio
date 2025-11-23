@@ -4,37 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orwa Mayaseh | Front End Developer</title>
+  <title data-i18n="page_title">Orwa Mayaseh | Front End Developer</title>
 
   <!-- External CSS Files -->
   <link rel="stylesheet" href="./assets-extra/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/fonts.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/components.css" />
-  <link rel="stylesheet" href="./assets/css/sections.css" />
+  <link rel="stylesheet" href="./assets/css/hero.css" />
   <link rel="stylesheet" href="./assets/css/about.css">
+  <link rel="stylesheet" href="./assets/css/skills.css">
+  <link rel="stylesheet" href="./assets/css/projects.css">
 </head>
 
 <body class="site">
   <!-- Header: START -->
   <header class="site__header">
     <div class="container">
-      <!-- Hamburger menu button (toggles sidebar navigation on mobile) -->
       <button class="site__menu-toggle site__btn" aria-label="Toggle menu">
         <i class="fa-solid fa-bars site__header-icon"></i>
-        <!-- <i class="fa-solid fa-xmark"></i> -->
       </button>
 
       <div class="site__controls">
-        <!-- Language switcher -->
+
         <button class="site__lang-toggle site__btn">
           <i class="fa-solid fa-language site__header-icon"></i>
         </button>
 
-        <!-- Theme switcher -->
         <button class="site__theme-toggle site__btn" aria-label="Toggle theme">
           <i class="fa-regular fa-moon site__header-icon"></i>
-          <!-- <i class="fa-regular fa-sun"></i> -->
         </button>
       </div>
     </div>
@@ -84,30 +82,32 @@
   <main class="site__main">
 
     <!-- Hero Section: START -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero reveal">
       <div class="container">
-        <!-- Content -->
-        <div class="hero__content">
-          <h1 data-i18n="hero_title" data-text="Hi, I'm Orwa Mayasah" class="hero__title">Hi, I'm Orwa Mayasah</h1>
-          <h2 data-i18n="hero_subtitle" class="hero__subtitle">Front-End Developer & UI Enthusiast</h2>
-          <p data-i18n="hero_desc" class="hero__description">
+
+        <div class="hero__content reveal">
+          <h1 data-i18n="hero_title" class="hero__title" data-text="Hi, I'm Orwa Mayasah">Hi, I'm Orwa Mayasah</h1>
+          <h2 data-i18n="hero_subtitle" class="hero__subtitle reveal">
+            Front-End Developer & UI Enthusiast
+          </h2>
+          <p data-i18n="hero_desc" class="hero__description reveal">
             I build fast, accessible, and visually engaging web experiences focused on performance and user delight.
           </p>
 
-          <div class="hero__actions">
-            <a data-i18n="btn_projects" href="#" class="hero__btn hero__btn--primary">View Projects</a>
+          <div class="hero__actions reveal">
+            <a data-i18n="btn_projects" href="#projects" class="hero__btn hero__btn--primary">View Projects</a>
             <a data-i18n="btn_contact" href="#" class="hero__btn hero__btn--secondary">Contact Me</a>
           </div>
 
         </div>
 
-        <!-- Images -->
-        <div class="hero__images">
+        <div class="hero__images reveal">
           <img src="./assets/images/hero/settings-gear.svg" alt="Big Gear" class="hero__gear hero__gear--big" />
           <img src="./assets/images/hero/settings-gear.svg" alt="Small Gear" class="hero__gear hero__gear--small" />
           <img src="./assets/images/hero/code.svg" alt="Code Symbol" class="hero__code" />
           <img src="./assets/images/hero/avatar.png" alt="Orwa Mayasah Avatar" class="hero__avatar" />
         </div>
+
       </div>
     </section>
     <!-- Hero Section: END -->
@@ -117,8 +117,7 @@
       <div class="container">
         <div class="about__wrapper">
 
-          <!-- PROFILE PHOTO -->
-          <div class="about__photo">
+          <div class="about__photo reveal">
             <div class="about__photo-frame">
               <img src="./assets/images/about/orwa.jpeg" alt="Orwa Mayasah" class="about__img">
             </div>
@@ -128,43 +127,33 @@
             <span class="about__circle about__circle--3"></span>
           </div>
 
-          <!-- CONTENT -->
-          <div class="about__content">
+          <div class="about__content reveal">
             <h2 class="about__title" data-i18n="about_title">About Me</h2>
 
             <p class="about__text" data-i18n="about_desc">
               I'm a passionate Front-End Developer focused on building real projects and improving my skills every day.
-              I care about clean code, modern UI, and delivering smooth user experiences.
             </p>
 
             <div class="about__details">
 
-              <div class="about__detail">
+              <div class="about__detail reveal">
                 <span class="detail__label" data-i18n="about_role_label">Role</span>
-                <span class="detail__value" data-i18n="about_role_value">
-                  Front-End Developer
-                </span>
+                <span class="detail__value" data-i18n="about_role_value">Front-End Developer</span>
               </div>
 
-              <div class="about__detail">
+              <div class="about__detail reveal">
                 <span class="detail__label" data-i18n="about_exp_label">Experience</span>
-                <span class="detail__value" data-i18n="about_exp_value">
-                  Learning through applied work
-                </span>
+                <span class="detail__value" data-i18n="about_exp_value">Learning through applied work</span>
               </div>
 
-              <div class="about__detail">
+              <div class="about__detail reveal">
                 <span class="detail__label" data-i18n="about_location_label">Location</span>
-                <span class="detail__value" data-i18n="about_location_value">
-                  Syria • Remote or On-Site
-                </span>
+                <span class="detail__value" data-i18n="about_location_value">Syria • Remote or On-Site</span>
               </div>
 
-              <div class="about__detail">
+              <div class="about__detail reveal">
                 <span class="detail__label" data-i18n="about_lang_label">Languages</span>
-                <span class="detail__value" data-i18n="about_lang_value">
-                  Arabic • English
-                </span>
+                <span class="detail__value" data-i18n="about_lang_value">Arabic • English</span>
               </div>
 
             </div>
@@ -178,35 +167,225 @@
     <!-- Skills section: START-->
     <section id="skills" class="skills">
       <div class="container">
-        <!-- skills content -->
+
+        <h2 class="skills__title reveal" data-i18n="skills_title">Skills</h2>
+        <p class="skills__subtitle reveal" data-i18n="skills_subtitle">
+          A focused set of front-end skills I continuously evolve through real projects.
+        </p>
+
+        <div class="skills__groups">
+
+          <!-- Group 1 -->
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title" data-i18n="skills_group1">Core Front-End</h3>
+
+            <div class="skills__items">
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-html5"></i>
+                </span>
+                <h4>HTML5</h4>
+                <div class="skill__bar"><span style="width: 90%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-css3-alt"></i>
+                </span>
+                <h4>CSS3</h4>
+                <div class="skill__bar"><span style="width: 85%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-js"></i>
+                </span>
+                <h4>JavaScript</h4>
+                <div class="skill__bar"><span style="width: 75%"></span></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Group 2 -->
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title" data-i18n="skills_group2">Tools & Libraries</h3>
+
+            <div class="skills__items">
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-bootstrap"></i>
+                </span>
+                <h4>Bootstrap</h4>
+                <div class="skill__bar"><span style="width: 60%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-git-alt"></i>
+                </span>
+                <h4>Git & GitHub</h4>
+                <div class="skill__bar"><span style="width: 80%"></span></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Group 3 -->
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title" data-i18n="skills_group3">React Ecosystem</h3>
+
+            <div class="skills__items">
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-brands fa-react"></i>
+                </span>
+                <h4>React.js</h4>
+                <div class="skill__bar"><span style="width: 65%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-solid fa-route"></i>
+                </span>
+                <h4>React Router</h4>
+                <div class="skill__bar"><span style="width: 60%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-solid fa-database"></i>
+                </span>
+                <h4>State Management (Context)</h4>
+                <div class="skill__bar"><span style="width: 55%"></span></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Group 4 -->
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title" data-i18n="skills_group4">Additional Skills</h3>
+
+            <div class="skills__items">
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </span>
+                <h4>Responsive Design</h4>
+                <div class="skill__bar"><span style="width: 80%"></span></div>
+              </div>
+
+              <div class="skill__card reveal">
+                <span class="skill__icon">
+                  <i class="fa-solid fa-palette"></i>
+                </span>
+                <h4>UI / UX Basics</h4>
+                <div class="skill__bar"><span style="width: 70%"></span></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
     <!-- Skills section: END -->
 
     <!-- Projects section: START-->
-    <section id="projects" class="projects">
+    <section class="projects reveal" id="projects">
       <div class="container">
-        <!-- projects content -->
+
+        <header class="projects__intro">
+          <h2 class="projects__title" data-i18n="projects_title">Featured Projects</h2>
+          <p class="projects__subtitle" data-i18n="projects_subtitle">
+            High-quality, interactive web experiences built with modern front-end technologies.
+          </p>
+        </header>
+
+        <div class="projects__grid">
+
+          <!-- PROJECT 1 -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/images/projects/Orwa-website.png" alt="Orwa Tech Website">
+              <div class="project-card__overlay"></div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title" data-i18n="projects_card1_title">Orwa Tech Website</h3>
+              <p class="project-card__desc" data-i18n="projects_card1_desc">
+                A modern, fully responsive tech website featuring clean UI, animation,
+                and reusable components.
+              </p>
+
+              <ul class="project-card__tech">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <div class="project-card__links">
+                <a href="https://orwa-mayaseh.github.io/orwa-tech-website/" target="_blank" class="btn-primary"
+                  data-i18n="projects_card1_btn_live">Live Demo</a>
+                <a href="https://github.com/orwa-mayaseh/orwa-tech-website" target="_blank" class="btn-secondary"
+                  data-i18n="projects_card1_btn_github">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/images/projects/STDR.png" alt="Agency Website">
+              <div class="project-card__overlay"></div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title" data-i18n="projects_card2_title">Agency Website</h3>
+              <p class="project-card__desc" data-i18n="projects_card2_desc">
+                A sleek digital agency website using advanced layouts, smooth animations,
+                and modern responsive design techniques.
+              </p>
+
+              <ul class="project-card__tech">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <div class="project-card__links">
+                <a href="https://orwa-mayaseh.github.io/agency-website/" target="_blank" class="btn-primary"
+                  data-i18n="projects_card2_btn_live">Live Demo</a>
+                <a href="https://github.com/orwa-mayaseh/agency-website" target="_blank" class="btn-secondary"
+                  data-i18n="projects_card2_btn_github">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
     <!-- Projects section: END -->
 
     <!-- Contact section: START-->
-    <section id="contact" class="contact">
-      <div class="container">
-        <!-- contact content -->
+    <section id="contact" class="contact reveal">
+      <div class="container" data-i18n="contact_section">
+        <!-- Add your contact form or text here -->
       </div>
     </section>
     <!-- Contact section: END -->
+
   </main>
   <!-- Main: END -->
 
-  <!-- Footer: START -->
   <footer class="site__footer">
-    <div class="container">
-    </div>
+    <div class="container" data-i18n="footer_text"></div>
   </footer>
-  <!-- Footer: END -->
 
   <!-- External Scripts Files -->
   <script type="module" src="./assets/js/main.js"></script>

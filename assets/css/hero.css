@@ -1,21 +1,15 @@
 /*
 ================================
-======= Table of Content =======
-================================
-    0. Hero Sections
-    1. About Section
+Hero Sections
 ================================
 */
-
-/* 0. HERO SECTION*/
 
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  max-height: 100vh;
-  padding: var(--spacing-xxxl) 0 ;
+  height: 100vh;
+  max-height: calc(100vh - 100px);
   overflow: hidden;
 }
 
@@ -64,6 +58,7 @@
   animation: ani 8s linear infinite;
 
 }
+
 html[dir="rtl"] .hero__title::before {
   left: auto;
   right: 0;
@@ -129,10 +124,10 @@ html[dir="rtl"] .hero__title::before {
   min-height: max;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows:  1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: ". gearl gearl gearl avatar avatar avatar"
-                        ". gearl gearl gearl avatar avatar avatar"
-                       ". gears code . avatar avatar avatar" ;
+    ". gearl gearl gearl avatar avatar avatar"
+    ". gears code . avatar avatar avatar";
   position: relative;
   animation: fadeSlideIn var(--transition-slow);
 }
@@ -156,7 +151,7 @@ html[dir="rtl"] .hero__title::before {
 
 /* Small gear */
 .hero__gear--small {
-  grid-area: gears ;
+  grid-area: gears;
   animation: spinReverse 15s linear infinite;
   position: absolute;
   top: -30%;
@@ -175,12 +170,16 @@ html[dir="rtl"] .hero__title::before {
    ANIMATIONS
 ========================================================= */
 @keyframes ani {
-0%, 70% {
-  width: 0;
-}
-50%, 100% {
-  width: 100%;
-}
+
+  0%,
+  70% {
+    width: 0;
+  }
+
+  50%,
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes spin {
@@ -319,7 +318,7 @@ html[dir="rtl"] .hero__title::before {
 }
 
 /* ---------- 768px (tablets) ---------- */
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .hero__title {
     font-size: 3rem;
   }

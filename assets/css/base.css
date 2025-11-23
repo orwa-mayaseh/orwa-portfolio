@@ -5,8 +5,9 @@
     0. Reset Styles
     1. Root Variables
     3. Global Styles
-    4. Layouts
-    5. Media Queries
+    4. Utilities
+    5. Layouts
+    6. Media Queries
 ================================
 */
 
@@ -149,6 +150,8 @@ body {
   color: var(--color-text-primary);
   background: var(--site-bg-gradient);
   position: relative;
+  padding-top: 60px;
+  overflow-y: hidden;
 }
 
 html[dir="rtl"] body {
@@ -157,40 +160,6 @@ html[dir="rtl"] body {
   overflow: hidden;
 }
 
-/* Snowflake animation */
-.snowflake {
-  position: absolute;
-  top: -10px;
-  z-index: -1000;
-  animation: fall linear forwards;
-}
-
-.inner {
-  display: block;
-  background: #fff;
-  border-radius: 50%;
-  animation: sway ease-in-out infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(200vh);
-  }
-}
-
-@keyframes sway {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(20px);
-  }
-
-  100% {
-    transform: translateX(-20px);
-  }
-}
 
 /* Headings */
 h1,
@@ -262,8 +231,68 @@ button {
   cursor: pointer;
 }
 
+/* ===============================
+   4. Utilities
+================================ */
 
-/* ========== 4. Layouts ========== */
+/* Snowflake animation */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  z-index: -1000;
+  animation: fall linear forwards;
+}
+
+.inner {
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  animation: sway ease-in-out infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(200vh);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+/* Reveal Animation  */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px) scale(0.98) rotateX(8deg);
+  filter: blur(6px);
+  transform-origin: center;
+  transition:
+    opacity 0.9s ease-out,
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    /* elegant bounce */
+    filter 0.8s ease-out;
+  will-change: opacity, transform, filter;
+  perspective: 1000px;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotateX(0deg);
+  filter: blur(0px);
+}
+
+/* ========== 5. Layouts ========== */
 /* Mobile-first: single column grid */
 .site {
   display: grid;
@@ -300,7 +329,8 @@ button {
   padding: 0 var(--spacing-md);
   margin: 0 auto;
 }
-/* ========== 5. Media Queries ========== */
+
+/* ========== 6. Media Queries ========== */
 /* ---------- Container ----------*/
 /* Small devices (>= 576px) */
 @media (min-width: 576px) {
