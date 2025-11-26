@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="./assets/css/about.css">
   <link rel="stylesheet" href="./assets/css/skills.css">
   <link rel="stylesheet" href="./assets/css/projects.css">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
 
 <body class="site">
@@ -102,10 +104,12 @@
         </div>
 
         <div class="hero__images reveal">
-          <img src="./assets/images/hero/settings-gear.svg" alt="Big Gear" class="hero__gear hero__gear--big" />
-          <img src="./assets/images/hero/settings-gear.svg" alt="Small Gear" class="hero__gear hero__gear--small" />
-          <img src="./assets/images/hero/code.svg" alt="Code Symbol" class="hero__code" />
-          <img src="./assets/images/hero/avatar.png" alt="Orwa Mayasah Avatar" class="hero__avatar" />
+          <img src="./assets/images/hero/settings-gear.svg" alt="Big Gear" class="hero__gear hero__gear--big"
+            loading="lazy" />
+          <img src="./assets/images/hero/settings-gear.svg" alt="Small Gear" class="hero__gear hero__gear--small"
+            loading="lazy" />
+          <img src="./assets/images/hero/code.svg" alt="Code Symbol" class="hero__code" loading="lazy" />
+          <img src="./assets/images/hero/avatar.png" alt="Orwa Mayasah Avatar" class="hero__avatar" loading="lazy" />
         </div>
 
       </div>
@@ -119,7 +123,7 @@
 
           <div class="about__photo reveal">
             <div class="about__photo-frame">
-              <img src="./assets/images/about/orwa.jpeg" alt="Orwa Mayasah" class="about__img">
+              <img src="./assets/images/about/orwa.jpeg" alt="Orwa Mayasah" class="about__img" loading="lazy">
             </div>
 
             <span class="about__circle about__circle--1"></span>
@@ -374,8 +378,72 @@
 
     <!-- Contact section: START-->
     <section id="contact" class="contact reveal">
-      <div class="container" data-i18n="contact_section">
-        <!-- Add your contact form or text here -->
+      <div class="container">
+
+        <!-- Intro Title + Subtitle -->
+        <div class="contact__intro reveal">
+          <h2 class="contact__title" data-i18n="contact_title">Contact</h2>
+          <p class="contact__subtitle" data-i18n="contact_subtitle">
+            Feel free to reach out for collaboration!
+          </p>
+        </div>
+
+        <!-- Grid Wrapper (Info + Form) -->
+        <div class="contact__grid reveal">
+
+          <!-- Contact Info -->
+          <div class="contact__info">
+            <div class="info__item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>orwa.m.mayaseh@gmail.com</span>
+            </div>
+
+            <div class="info__item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+963 994 618 029</span>
+            </div>
+
+            <div class="info__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span data-i18n="contact_location">Syria • Remote or On-Site</span>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact__form" id="contactForm">
+
+            <div class="form__group">
+              <label for="name" data-i18n="contact_name_label">Name</label>
+              <input type="text" id="name" placeholder="please enter your name. . ."
+                data-i18n-placeholder="contact_name_placeholder" required />
+            </div>
+
+            <div class="form__group">
+              <label for="email" data-i18n="contact_email_label">Email</label>
+              <input type="email" id="email" placeholder="please" data-i18n-placeholder="contact_email_placeholder"
+                required />
+            </div>
+
+            <div class="form__group">
+              <label for="subject" data-i18n="contact_subject_label">Subject</label>
+              <input type="text" id="subject" placeholder="please enter the subject. . ."
+                data-i18n-placeholder="contact_subject_placeholder" required />
+            </div>
+
+            <div class="form__group">
+              <label for="message" data-i18n="contact_message_label">Message</label>
+              <textarea id="message" rows="5" placeholder="please enter your message. . ."
+                data-i18n-placeholder="contact_message_placeholder" required></textarea>
+            </div>
+
+            <button type="submit" class="contact__btn" data-i18n="btn_send">
+              Send Message
+            </button>
+
+            <p class="form__feedback" id="formFeedback"></p>
+          </form>
+
+        </div>
       </div>
     </section>
     <!-- Contact section: END -->
@@ -383,11 +451,65 @@
   </main>
   <!-- Main: END -->
 
-  <footer class="site__footer">
-    <div class="container" data-i18n="footer_text"></div>
+  <!-- Footer: START -->
+  <footer class="site__footer reveal">
+    <div class="container footer__container">
+
+      <!-- LEFT SIDE: Branding -->
+      <div class="footer__brand">
+        <h3 class="footer__title" data-i18n="footer_title">Orwa Mayasah</h3>
+        <p class="footer__desc" data-i18n="footer_desc">
+          Front-End Developer — Building modern, fast and clean web interfaces.
+        </p>
+      </div>
+
+      <!-- MIDDLE: Quick Links -->
+      <div class="footer__column">
+        <h4 class="footer__column-title" data-i18n="footer_quick_links">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="#projects" data-i18n="footer_link_projects">Projects</a></li>
+          <li><a href="#about" data-i18n="footer_link_about">About Me</a></li>
+          <li><a href="#services" data-i18n="footer_link_services">Services</a></li>
+          <li><a href="#contact" data-i18n="footer_link_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT SIDE: Social Links -->
+      <div class="footer__column">
+        <h4 class="footer__column-title" data-i18n="footer_socials">Social Media</h4>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/orwamayaseh" target="_blank" data-i18n="footer_social_link_linkedin"
+            class="social__link">LinkedIn</a>
+          <a href="https://codepen.io/Orwa-Mayasah" target="_blank" data-i18n="footer_social_link_codepen"
+            class="social__link">CodePen</a>
+          <a href="https://github.com/orwa-mayaseh" target="_blank" data-i18n="footer_social_link_github"
+            class="social__link">GitHub</a>
+          <a href="https://facebook.com/Orwa.M.Mayaseh" target="_blank" data-i18n="footer_social_link_facebook"
+            class="social__link">Facebook</a>
+          <a href="https://telegram.org/Orwa_mayaseh" target="_blank" data-i18n="footer_social_link_telegram"
+            class="social__link">Telegram</a>
+          <a href="https://instagram.com/orwamayasah" target="_blank" data-i18n="footer_social_link_instagram"
+            class="social__link">Instagram</a>
+          <a href="https://x.com/Orwa_Mayaseh" target="_blank" data-i18n="footer_social_link_x"
+            class="social__link">Twitter / X</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer__bottom">
+      <p data-i18n="footer_copyright">
+        © <span class="date">
+          <script>document.write(new Date().getFullYear());</script>
+        </span> — Built by <span>Orwa Mayasah</span>
+      </p>
+    </div>
   </footer>
+  <!-- Footer: END -->
 
   <!-- External Scripts Files -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 

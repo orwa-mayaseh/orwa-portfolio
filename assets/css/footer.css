@@ -1,0 +1,110 @@
+/* ===============================
+   FOOTER STYLES — Enhanced Version
+================================ */
+
+.site__footer {
+    background: var(--color-bg-dark);
+    color: var(--color-text-inverse);
+    padding-top: var(--spacing-xxxl);
+    padding-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xxxl);
+    border-top: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Grid layout */
+.footer__container {
+    display: grid;
+    gap: var(--spacing-xxl);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .footer__container {
+        grid-template-columns: 1.2fr 0.9fr 1fr;
+        align-items: start;
+    }
+}
+
+/* ---------- Titles ---------- */
+.footer__col-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-tertiary);
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+/* ---------- Left (Brand) ---------- */
+.footer__title {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-tertiary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer__desc {
+    font-size: var(--font-size-sm);
+    opacity: 0.75;
+    line-height: var(--line-height-lg);
+    max-width: 90%;
+}
+
+/* ---------- Quick Links ---------- */
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer__links a {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-inverse);
+    opacity: 0.7;
+    transition: opacity var(--transition-normal), transform var(--transition-fast);
+}
+
+.footer__links a:hover {
+    opacity: 1;
+    transform: translateX(6px);
+    color: var(--color-tertiary);
+}
+
+/* ---------- Social Links ---------- */
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.social__link {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-inverse);
+    opacity: 0.7;
+    transition: opacity var(--transition-normal), transform var(--transition-fast);
+}
+
+.social__link:hover {
+    opacity: 1;
+    transform: translateX(8px);
+    color: var(--color-secondary);
+}
+
+/* ---------- Footer Bottom ---------- */
+.footer__bottom {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.footer__bottom p {
+    font-size: var(--font-size-xs);
+    opacity: 0.6;
+}
+
+.footer__bottom span {
+    color: var(--color-tertiary);
+    font-weight: var(--font-weight-bold);
+}

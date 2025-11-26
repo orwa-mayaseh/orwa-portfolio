@@ -10,7 +10,7 @@ import { translations } from "./lang.js";
 import { initLangToggle } from "./lang-toggle.js";
 import { initRevealStagger } from "./reveal-animations.js";
 import { initSkillsReveal } from "./progress-bar-reveal.js";
-
+import { initContactForm } from "./contact-form.js";
 // Wait for the DOM to fully load before initializing
 document.addEventListener("DOMContentLoaded", () => {
   initMenuToggle(); // Sidebar toggle feature
@@ -33,4 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootMargin: "0px 0px -100px 0px",
     threshold: 0.3,
   });
+
+  // Initialize contact form
+  initContactForm("#contactForm", "#formFeedback");
 });
