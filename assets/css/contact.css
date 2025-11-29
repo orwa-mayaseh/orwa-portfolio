@@ -32,18 +32,18 @@ Table of Content (Contact):
 ========================================================= */
 
 .contact__title {
-  font-size: var(--font-size-xxxl);
-  font-weight: var(--font-weight-extrabold);
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text-inverse);
   text-align: center;
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-sm);
 }
 
 .contact__subtitle {
-  font-size: var(--font-size-lg);
   text-align: center;
-  margin-bottom: var(--spacing-xxl);
-  color: var(--color-text-inverse);
+  font-size: var(--font-size-lg);
+  color: #e6e6e6;
+  max-width: 650px;
+  margin: 0 auto var(--spacing-xxl);
 }
 
 
@@ -77,7 +77,11 @@ Table of Content (Contact):
   font-size: var(--font-size-md);
   position: relative;
 }
-
+@media (max-width: 480px) {
+  .contact__info {
+    flex-direction: column;
+  } 
+}
 .info__item span {
   color: var(--color-text-inverse);
 }

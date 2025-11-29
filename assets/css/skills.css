@@ -109,7 +109,7 @@ html[dir="rtl"] .skills__group-title::before {
 6. SKILL CARD
 ========================================================= */
 .skill__card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
   backdrop-filter: blur(12px);
@@ -162,7 +162,7 @@ html[dir="rtl"] .skills__group-title::before {
 }
 
 .skill__card:hover .skill__icon i {
-  color: var(--color-primary);
+  color: var( --color-bg-light);
   transform: scale(1.15);
 }
 

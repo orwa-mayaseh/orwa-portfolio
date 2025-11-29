@@ -68,6 +68,7 @@ export function initContactForm(
     // -------------------------------
     const serviceID = "service_knert8g";
     const templateID = "template_ppvh7cn";
+    console.log("Message:", form.message.value);
 
     // sendForm automatically reads values from input fields
     window.emailjs

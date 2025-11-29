@@ -39,17 +39,18 @@ Table of Content (Projects):
 }
 
 .projects__title {
-    font-size: var(--font-size-xxxl);
-    color: var(--color-text-inverse);
-    margin-bottom: var(--spacing-sm);
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-sm);
 }
 
 .projects__subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: var(--line-height-lg);
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: #e6e6e6;
+  max-width: 650px;
+  margin: 0 auto var(--spacing-xxl);
 }
 
 

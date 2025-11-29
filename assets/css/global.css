@@ -164,7 +164,7 @@ button {
 
 @media (max-width: 320px) {
     .container {
-        max-width: 320px;
+        max-width: 300px;
     }
 }
 @media (min-width: 576px) {
@@ -191,7 +191,7 @@ button {
     html[dir="rtl"] .site {
         grid-template-areas:
             "header header"
-            "main aside"
+            "main aside";
             grid-template-columns: 1fr 60px;
     }
 }

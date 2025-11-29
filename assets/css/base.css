@@ -92,7 +92,7 @@ ol {
   --color-secondary: #00caff;
   --color-tertiary: #00ffde;
 
-  --site-bg-gradient: linear-gradient(to left top, var(--color-secondary), var(--color-primary));
+  --site-bg-gradient: repeating-linear-gradient(to left top, #0065f8 0%, #004080 100%);
   --color-bg-light: #ffffff;
   --color-bg-dark: #121212;
 
@@ -103,7 +103,6 @@ ol {
   /* --- 1.2 Typography --- */
   --font-family-base: 'Poppins', sans-serif;
   --font-family-heading: 'Montserrat', sans-serif;
-  --font-family-code: 'Fira Code', monospace;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
