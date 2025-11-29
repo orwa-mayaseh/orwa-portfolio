@@ -1,0 +1,92 @@
+/*
+==================================================
+=================== HEADER =======================
+==================================================
+Responsive fixed header with theme & language buttons
+Table of Content (Header):
+0. Header Wrapper
+  0.1 Header Positioning
+  0.2 Header Inner Layout
+1. Header Controls
+  1.1 Buttons Wrapper
+  1.2 Header Buttons
+  1.3 Header Icons
+2. Media Queries
+  2.1 Header Desktop Adjustments (≥768px)
+==================================================
+*/
+
+/* ============================================
+   0. HEADER WRAPPER
+============================================ */
+
+/* --- 0.1 Header Positioning --- */
+.site__header {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+/* --- 0.2 Header Inner Layout --- */
+.site__header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+/* ============================================
+   1. HEADER CONTROLS
+============================================ */
+
+/* --- 1.1 Buttons Wrapper --- */
+.site__controls {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- 1.2 Header Buttons --- */
+.site__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.site__btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- 1.3 Header Icons --- */
+.site__header-icon {
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   2. MEDIA QUERIES
+============================================ */
+
+/* --- 2.1 Header Desktop Adjustments (≥768px) --- */
+@media (min-width: 768px) {
+    .site__header .container {
+        justify-content: flex-end;
+    }
+
+    .site__controls {
+        width: 100px;
+    }
+
+    .site__menu-toggle {
+        display: none;
+    }
+}

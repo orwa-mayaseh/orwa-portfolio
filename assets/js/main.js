@@ -3,15 +3,16 @@
 // ===============================
 
 // Import all feature modules
-import { initMenuToggle } from "./menu-toggle.js";
-import { initSnowflakes } from "./snowflakes.js";
-import { initThemeToggle } from "./theme-toggle.js";
-import { translations } from "./lang.js";
-import { initLangToggle } from "./lang-toggle.js";
-import { initRevealStagger } from "./reveal-animations.js";
-import { initSkillsReveal } from "./progress-bar-reveal.js";
-import { initContactForm } from "./contact-form.js";
-// Wait for the DOM to fully load before initializing
+import { initMenuToggle } from "./modules/menu-toggle.js";
+import { initSnowflakes } from "./modules/snowflakes.js";
+import { initThemeToggle } from "./modules/theme-toggle.js";
+import { translations } from "./modules/lang.js";
+import { initLangToggle } from "./modules/lang-toggle.js";
+import { initRevealStagger } from "./modules/reveal.js";
+import { initSkillsReveal } from "./modules/progress-bar-reveal.js";
+import { initContactForm } from "./modules/contact-form.js";
+
+// Wait for the DOM to fully load before initializing features
 document.addEventListener("DOMContentLoaded", () => {
   initMenuToggle(); // Sidebar toggle feature
   initSnowflakes(); // Falling snow animation
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selector: ".reveal",
     rootMargin: "0px 0px -100px 0px",
     threshold: 0.1,
-    delay: 10,
+    delay: 100,
   });
 
   // Initialize Skills Progress Bar Reveal

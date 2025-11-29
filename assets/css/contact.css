@@ -1,9 +1,35 @@
-/* ==============================
-   Contact Section 
-============================== */
-.contact {
-  padding: var(--spacing-xxl) 0;
-}
+/* =========================================================
+=======================  CONTACT SECTION  ==================
+=========================================================
+Styles for Contact Section including layout, titles,
+contact info, grid system, form elements, inputs,
+feedback messages, submit button, and RTL support.
+
+Table of Content (Contact):
+1. Section Wrapper
+2. Section Titles
+3. Grid Layout
+4. Contact Info
+    4.1 Item Structure
+    4.2 Dot Separator
+5. Contact Form
+    5.1 Form Hover Effect
+    5.2 Input Styles
+    5.3 Focus States
+6. Submit Button
+7. Feedback Message
+8. RTL Support
+========================================================= */
+
+
+/* =========================================================
+1. Section Wrapper
+========================================================= */
+
+
+/* =========================================================
+2. Section Titles
+========================================================= */
 
 .contact__title {
   font-size: var(--font-size-xxxl);
@@ -20,7 +46,11 @@
   color: var(--color-text-inverse);
 }
 
-/* ===== Grid Layout ===== */
+
+/* =========================================================
+3. Grid Layout
+========================================================= */
+
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -29,13 +59,17 @@
 }
 
 
-/* ===== Contact Info ===== */
+/* =========================================================
+4. Contact Info
+========================================================= */
+
 .contact__info {
   display: flex;
   direction: ltr !important;
   gap: var(--spacing-lg);
 }
 
+/* 4.1 Item Structure */
 .info__item {
   display: flex;
   align-items: center;
@@ -44,7 +78,16 @@
   position: relative;
 }
 
-/* Modern dot separator */
+.info__item span {
+  color: var(--color-text-inverse);
+}
+
+.info__item i {
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+}
+
+/* 4.2 Dot Separator */
 .info__item:not(:last-child)::after {
   content: "";
   width: 6px;
@@ -57,16 +100,11 @@
   transform: translateY(-50%);
 }
 
-.info__item span {
-  color: var(--color-text-inverse);
-}
 
-.info__item i {
-  color: var(--color-primary);
-  font-size: var(--font-size-xl);
-}
+/* =========================================================
+5. Contact Form
+========================================================= */
 
-/* ===== Contact Form ===== */
 .contact__form {
   width: 100%;
   max-width: 550px;
@@ -81,12 +119,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
+/* 5.1 Form Hover Effect */
 .contact__form:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* 5.2 Input Styles */
 .form__group {
   display: flex;
   flex-direction: column;
@@ -98,7 +137,6 @@
   margin-bottom: var(--spacing-xs);
 }
 
-/* Sleek glass inputs */
 .form__group input,
 .form__group textarea {
   padding: var(--spacing-sm) var(--spacing-md);
@@ -111,6 +149,7 @@
   transition: border 0.3s, box-shadow 0.3s;
 }
 
+/* 5.3 Focus States */
 .form__group input:focus,
 .form__group textarea:focus {
   border-color: var(--color-primary);
@@ -134,7 +173,11 @@ textarea {
   caret-color: var(--color-primary);
 }
 
-/* Submit button */
+
+/* =========================================================
+6. Submit Button
+========================================================= */
+
 .contact__btn {
   padding: var(--spacing-md) var(--spacing-xl);
   font-size: var(--font-size-md);
@@ -151,13 +194,22 @@ textarea {
   background: var(--color-secondary);
 }
 
+
+/* =========================================================
+7. Feedback Message
+========================================================= */
+
 .form__feedback {
   font-size: var(--font-size-md);
   text-align: center;
   color: var(--color-primary);
 }
 
-/* ===== RTL Support ===== */
+
+/* =========================================================
+8. RTL Support
+========================================================= */
+
 html[dir="rtl"] .contact__form {
   text-align: right;
 }

@@ -1,62 +1,34 @@
 /*
-================================
-======= Table of Content =======
-================================
-    0. Header
-    1. Aside 
-    2. ...
-    3. ...
-    4. ...
-    5. Media Queries
-================================
+==================================================
+==================== ASIDE =======================
+==================================================
+ Floating side navigation with icons & tooltips
+
+Table of Content (Aside):
+0. Wrapper
+  0.1 Aside Base Positioning
+  0.2 RTL Adjustment
+  0.3 Open State
+1. Aside List
+  1.1 List Layout
+2. Aside Links
+  2.1 Link Styling
+  2.2 Link Hover Effect
+  2.3 Icon Styling
+3. Tooltips
+  3.1 Tooltip Base
+4. Media Queries
+  4.1 Desktop Layout (≥768px)
+  4.2 Tooltip Position (LTR & RTL)
+  4.3 Tooltip Hover Behavior
+==================================================
 */
 
-/* ========== 0. Header ========== */
-.site__header {
-    background-color: transparent;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9999;
-}
+/* ============================================
+   0. WRAPPER
+============================================ */
 
-.site__header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md);
-}
-
-.site__controls {
-    width: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.site__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-}
-
-.site__btn:hover {
-    transform: scale(1.1);
-}
-
-.site__header-icon,
-.site__aside-icon {
-    color: var(--color-text-inverse);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-}
-
-/* ========== 1. Aside ========== */
+/* --- 0.1 Aside Base Positioning --- */
 .site__aside {
     position: fixed;
     top: 60px;
@@ -70,16 +42,24 @@
     transition: var(--transition-slow);
 }
 
+/* --- 0.2 RTL Adjustment --- */
 html[dir="rtl"] .site__aside {
     left: auto;
     right: 0;
 }
+
+/* --- 0.3 Open State --- */
 .site__aside.asideIsOpen {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
 }
 
+/* ============================================
+   1. ASIDE LIST
+============================================ */
+
+/* --- 1.1 List Layout --- */
 .site__aside-list {
     display: flex;
     flex-direction: column;
@@ -88,6 +68,11 @@ html[dir="rtl"] .site__aside {
     gap: var(--spacing-md);
 }
 
+/* ============================================
+   2. ASIDE LINKS
+============================================ */
+
+/* --- 2.1 Link Styling --- */
 .site__aside-link {
     display: flex;
     justify-content: center;
@@ -101,33 +86,35 @@ html[dir="rtl"] .site__aside {
     transition: var(--transition-normal);
 }
 
+/* --- 2.2 Link Hover Effect --- */
 .site__aside-link:hover {
     transform: scale(1.1);
 }
 
+/* --- 2.3 Icon Styling --- */
+.site__aside-icon {
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   3. TOOLTIPS
+============================================ */
+
+/* --- 3.1 Tooltip Base --- */
 .site__aside-tooltip {
     display: none;
 }
 
-/* ========== 5. Media Queries ========== */
+/* ============================================
+   4. MEDIA QUERIES
+   Desktop Behaviors (≥768px)
+============================================ */
 
-/* ---------- Header ---------- */
 @media (min-width: 768px) {
-    .site__header .container {
-        justify-content: flex-end;
-    }
 
-    .site__controls {
-        width: 100px;
-    }
-
-    .site__menu-toggle {
-        display: none;
-    }
-}
-
-/* ---------- Aside ---------- */
-@media (min-width: 768px) {
+    /* --- 4.1 Desktop Layout --- */
     .site__aside {
         transform: none;
         width: auto;
@@ -144,7 +131,7 @@ html[dir="rtl"] .site__aside {
         font-size: var(--font-size-xl);
     }
 
-
+    /* --- 4.2 Tooltip Position --- */
     .site__aside-tooltip {
         display: inline;
         position: absolute;
@@ -160,11 +147,13 @@ html[dir="rtl"] .site__aside {
         text-transform: capitalize;
         text-align: center;
     }
+
     html[dir="rtl"] .site__aside-tooltip {
         right: auto;
         left: -220%;
     }
 
+    /* --- 4.3 Tooltip Hover Behavior --- */
     .site__aside-link:hover .site__aside-tooltip {
         opacity: 1;
         visibility: visible;

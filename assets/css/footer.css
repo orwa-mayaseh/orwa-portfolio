@@ -1,18 +1,30 @@
-/* ===============================
-   FOOTER STYLES — Enhanced Version
-================================ */
+/* =========================================================
+========================  FOOTER SECTION  ==================
+========================================================= 
+Styles for website footer including layout, links, brand,
+social icons, and bottom copyright bar.
 
+Table of Content (Footer):
+1. Base Footer Wrapper
+2. Grid Layout
+3. Column Titles
+4. Brand (Left Column)
+5. Quick Links && Social Links
+6. Footer Bottom
+========================================================= */
+
+/* ===============================
+    1. Base Footer Wrapper
+ =============================== */
 .site__footer {
-    background: var(--color-bg-dark);
-    color: var(--color-text-inverse);
-    padding-top: var(--spacing-xxxl);
-    padding-bottom: var(--spacing-xl);
-    margin-top: var(--spacing-xxxl);
+    padding-bottom: var(--spacing-md);
     border-top: 2px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Grid layout */
+/* ===============================
+    2. Grid Layout
+ =============================== */
 .footer__container {
     display: grid;
     gap: var(--spacing-xxl);
@@ -26,8 +38,10 @@
     }
 }
 
-/* ---------- Titles ---------- */
-.footer__col-title {
+/* ===============================
+    3. Column Titles
+ =============================== */
+.footer__column-title {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     color: var(--color-tertiary);
@@ -36,7 +50,9 @@
     text-transform: uppercase;
 }
 
-/* ---------- Left (Brand) ---------- */
+/* ===============================
+    4. Brand (Left Column)
+ =============================== */
 .footer__title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-extrabold);
@@ -51,57 +67,41 @@
     max-width: 90%;
 }
 
-/* ---------- Quick Links ---------- */
-.footer__links {
+/* ===============================
+    5. Quick Links
+ =============================== */
+.footer__links, .footer__socials {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-.footer__links a {
+.quick__link, .social__link {
     font-size: var(--font-size-sm);
     color: var(--color-text-inverse);
     opacity: 0.7;
     transition: opacity var(--transition-normal), transform var(--transition-fast);
 }
 
-.footer__links a:hover {
+.quick__link:hover, .social__link:hover {
     opacity: 1;
     transform: translateX(6px);
     color: var(--color-tertiary);
-}
+}   
 
-/* ---------- Social Links ---------- */
-.footer__socials {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.social__link {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-inverse);
-    opacity: 0.7;
-    transition: opacity var(--transition-normal), transform var(--transition-fast);
-}
-
-.social__link:hover {
-    opacity: 1;
-    transform: translateX(8px);
-    color: var(--color-secondary);
-}
-
-/* ---------- Footer Bottom ---------- */
+/* ===============================
+    6. Footer Bottom
+ =============================== */
 .footer__bottom {
-    margin-top: var(--spacing-xxl);
     padding-top: var(--spacing-lg);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     text-align: center;
+    direction: ltr !important;
 }
 
 .footer__bottom p {
     font-size: var(--font-size-xs);
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .footer__bottom span {

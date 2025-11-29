@@ -1,21 +1,45 @@
 /*
-================================
-Hero Sections
-================================
+==================================================
+===================== HERO ======================
+==================================================
+ Main hero section with animated title, buttons, and decorative icons
+
+Table of Content (Hero):
+0. Hero Wrapper
+1. Hero Container
+2. Text Content
+   2.1 Title
+   2.2 Subtitle
+   2.3 Description
+3. Hero Actions (Buttons)
+4. Hero Images Grid
+   4.1 Avatar
+   4.2 Big Gear
+   4.3 Small Gear
+   4.4 Code Icon
+5. Animations
+6. Responsive Design
+   6.1 320px
+   6.2 375px
+   6.3 425px
+   6.4 768px
+==================================================
 */
 
+/* ============================================
+   0. HERO WRAPPER
+============================================ */
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  max-height: calc(100vh - 100px);
-  overflow: hidden;
+  max-height: calc(100vh - 60px);
 }
 
-/* -----------------------------
-   Container setup
------------------------------ */
+/* ============================================
+   1. HERO CONTAINER
+============================================ */
 .hero .container {
   max-width: 768px;
   display: flex;
@@ -23,10 +47,9 @@ Hero Sections
   gap: var(--spacing-xxl);
 }
 
-
-/* -----------------------------
-   Text content styles
------------------------------ */
+/* ============================================
+   2. TEXT CONTENT
+============================================ */
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -34,15 +57,17 @@ Hero Sections
   align-items: center;
 }
 
+/* -------- 2.1 Title -------- */
 .hero__title {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-inverse);
   text-transform: capitalize;
-  position: relative;
   width: fit-content;
+  position: relative;
 }
 
+/* Title typing animation */
 .hero__title::before {
   content: attr(data-text);
   position: absolute;
@@ -52,22 +77,21 @@ Hero Sections
   height: 100%;
   color: var(--color-primary, #00d8ff);
   border-right: 3px solid var(--color-primary, #00d8ff);
-  text-shadow: 0 0 25px rgba(255, 255, 222, 0.7);
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0 0 25px rgba(255, 255, 222, 0.7);
   animation: ani 8s linear infinite;
-
 }
 
+/* RTL correction */
 html[dir="rtl"] .hero__title::before {
   left: auto;
   right: 0;
   border-right: none;
   border-left: 3px solid var(--color-primary, #00d8ff);
-  text-shadow: 0 0 25px rgba(255, 255, 222, 0.7);
-
 }
 
+/* -------- 2.2 Subtitle -------- */
 .hero__subtitle {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
@@ -75,17 +99,17 @@ html[dir="rtl"] .hero__title::before {
   text-transform: capitalize;
 }
 
+/* -------- 2.3 Description -------- */
 .hero__description {
-  font-family: var(--font-family-base);
   color: var(--color-text-inverse);
-  text-transform: capitalize;
   padding: 0 var(--spacing-sm);
   text-align: center;
+  text-transform: capitalize;
 }
 
-/* -----------------------------
-   Buttons and interactions
------------------------------ */
+/* ============================================
+   3. HERO ACTIONS (BUTTONS)
+============================================ */
 .hero__actions {
   display: flex;
   justify-content: flex-start;
@@ -96,8 +120,8 @@ html[dir="rtl"] .hero__title::before {
   padding: var(--spacing-sm);
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-medium);
-  transition: var(--transition-normal);
   cursor: pointer;
+  transition: var(--transition-normal);
 }
 
 .hero__btn--primary {
@@ -115,24 +139,24 @@ html[dir="rtl"] .hero__title::before {
   box-shadow: var(--shadow-lg);
 }
 
-/* -----------------------------
-   Images and decorative icons
------------------------------ */
+/* ============================================
+   4. HERO IMAGES GRID
+============================================ */
 .hero__images {
   direction: ltr !important;
   width: 100%;
-  min-height: max;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: ". gearl gearl gearl avatar avatar avatar"
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    ". gearl gearl gearl avatar avatar avatar"
     ". gearl gearl gearl avatar avatar avatar"
     ". gears code . avatar avatar avatar";
   position: relative;
   animation: fadeSlideIn var(--transition-slow);
 }
 
-/* Main avatar (profile image) */
+/* -------- 4.1 Avatar -------- */
 .hero__avatar {
   grid-area: avatar;
   position: absolute;
@@ -140,24 +164,23 @@ html[dir="rtl"] .hero__title::before {
   right: -8%;
 }
 
-/* Gears and code icons (absolute positioned) */
-/* Large gear */
+/* -------- 4.2 Big Gear -------- */
 .hero__gear--big {
   grid-area: gearl;
-  justify-self: center;
   align-self: center;
+  justify-self: center;
   animation: spin 15s linear infinite;
 }
 
-/* Small gear */
+/* -------- 4.3 Small Gear -------- */
 .hero__gear--small {
   grid-area: gears;
-  animation: spinReverse 15s linear infinite;
   position: absolute;
   top: -30%;
+  animation: spinReverse 15s linear infinite;
 }
 
-/* code icon */
+/* -------- 4.4 Code Icon -------- */
 .hero__code {
   grid-area: code;
   justify-self: end;
@@ -166,9 +189,9 @@ html[dir="rtl"] .hero__title::before {
   top: -100%;
 }
 
-/* =========================================================
-   ANIMATIONS
-========================================================= */
+/* ============================================
+   5. ANIMATIONS
+============================================ */
 @keyframes ani {
 
   0%,
@@ -202,12 +225,11 @@ html[dir="rtl"] .hero__title::before {
   }
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN (MEDIA QUERIES)
-   Breakpoints: 320px, 375px, 425px, 768px
-========================================================= */
+/* ============================================
+   6. RESPONSIVE DESIGN
+============================================ */
 
-/* ---------- 320px (smallest phones) ---------- */
+/* -------- 6.1 Phones (max 320px) -------- */
 @media (max-width: 320px) {
   .hero__title {
     font-size: 1.6rem;
@@ -227,12 +249,10 @@ html[dir="rtl"] .hero__title::before {
 
   .hero__gear--big {
     width: 55px;
-    left: 5%;
   }
 
   .hero__gear--small {
     width: 40px;
-    left: 30%;
   }
 
   .hero__code {
@@ -241,18 +261,17 @@ html[dir="rtl"] .hero__title::before {
 
   .hero__btn {
     font-size: 0.75rem;
-    padding: 0.5rem 0.8rem;
   }
 }
 
-/* ---------- 375px (common mobile size) ---------- */
+/* -------- 6.2 Phones (321px–375px) -------- */
 @media (min-width: 321px) and (max-width: 375px) {
   .hero__title {
     font-size: 1.8rem;
   }
 
   .hero__subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .hero__description {
@@ -277,11 +296,10 @@ html[dir="rtl"] .hero__title::before {
 
   .hero__btn {
     font-size: 0.8rem;
-    padding: 0.6rem 1rem;
   }
 }
 
-/* ---------- 425px (large phones) ---------- */
+/* -------- 6.3 Phones (376px–767px) -------- */
 @media (min-width: 376px) and (max-width: 767px) {
   .hero__title {
     font-size: 2rem;
@@ -313,11 +331,10 @@ html[dir="rtl"] .hero__title::before {
 
   .hero__btn {
     font-size: 0.85rem;
-    padding: 0.7rem 1.6rem;
   }
 }
 
-/* ---------- 768px (tablets) ---------- */
+/* -------- 6.4 Tablets (≥768px) -------- */
 @media (min-width: 768px) {
   .hero__title {
     font-size: 3rem;
@@ -338,12 +355,10 @@ html[dir="rtl"] .hero__title::before {
 
   .hero__gear--big {
     width: 100px;
-    left: 12%;
   }
 
   .hero__gear--small {
     width: 80px;
-    left: 38%;
   }
 
   .hero__code {
@@ -351,7 +366,6 @@ html[dir="rtl"] .hero__title::before {
   }
 
   .hero__btn {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
   }
 }

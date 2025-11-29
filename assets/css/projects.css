@@ -1,17 +1,38 @@
-/*
-========================================
-=  PROJECTS SECTION — ULTRA PRO DESIGN  =
-========================================
-*/
+/* =========================================================
+=======================  PROJECTS SECTION  ==================
+=========================================================
+Styles for Projects Section including wrapper, titles, grid,
+cards, images, content, tech list, buttons, and RTL support.
 
-/* ========== Section Wrapper ========== */
+Table of Content (Projects):
+1. Section Wrapper
+2. Section Titles
+3. Projects Grid
+4. Project Card
+    4.1 3D Hover Effect
+5. Image Area
+    5.1 Zoom on Hover
+    5.2 Overlay Gradient
+6. Content Area
+7. Tech List
+8. Buttons
+9. RTL Support
+========================================================= */
+
+
+/* =========================================================
+1. Section Wrapper
+========================================================= */
 
 .projects {
-    padding: var(--spacing-xxxl) 0;
     position: relative;
 }
 
-/* Title + Subtitle */
+
+/* =========================================================
+2. Section Titles
+========================================================= */
+
 .projects__intro {
     text-align: center;
     margin-bottom: var(--spacing-xxl);
@@ -31,7 +52,10 @@
     line-height: var(--line-height-lg);
 }
 
-/* ========== Grid ========== */
+
+/* =========================================================
+3. Projects Grid
+========================================================= */
 
 .projects__grid {
     display: grid;
@@ -53,7 +77,10 @@
     }
 }
 
-/* ========== Project Card ========== */
+
+/* =========================================================
+4. Project Card
+========================================================= */
 
 .project-card {
     background: rgba(255, 255, 255, 0.05);
@@ -67,13 +94,17 @@
     cursor: pointer;
 }
 
-/* 3D Hover Tilt */
+/* 4.1 3D Hover Effect */
 .project-card:hover {
     transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
     box-shadow: var(--shadow-lg);
 }
 
-/* Image */
+
+/* =========================================================
+5. Image Area
+========================================================= */
+
 .project-card__image {
     position: relative;
     width: 100%;
@@ -89,12 +120,12 @@
     transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Zoom on hover */
+/* 5.1 Zoom on Hover */
 .project-card:hover .project-card__image img {
     transform: scale(1.12);
 }
 
-/* Overlay Gradient */
+/* 5.2 Overlay Gradient */
 .project-card__overlay {
     position: absolute;
     inset: 0;
@@ -105,7 +136,10 @@
     mix-blend-mode: multiply;
 }
 
-/* ========== Content ========== */
+
+/* =========================================================
+6. Content Area
+========================================================= */
 
 .project-card__content {
     padding: var(--spacing-xl);
@@ -123,7 +157,11 @@
     margin-bottom: var(--spacing-lg);
 }
 
-/* Tech List */
+
+/* =========================================================
+7. Tech List
+========================================================= */
+
 .project-card__tech {
     display: flex;
     flex-wrap: wrap;
@@ -146,7 +184,10 @@
     color: var(--color-text-inverse);
 }
 
-/* ========== Buttons ========== */
+
+/* =========================================================
+8. Buttons
+========================================================= */
 
 .project-card__links {
     display: flex;
@@ -191,7 +232,10 @@
     transform: translateY(-4px);
 }
 
-/* RTL Support */
+
+/* =========================================================
+9. RTL Support
+========================================================= */
 
 html[dir="rtl"] .project-card__tech {
     justify-content: flex-end;

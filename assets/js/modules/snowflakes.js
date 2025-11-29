@@ -16,16 +16,16 @@ export function initSnowflakes() {
     const inner = document.createElement("span");
     inner.classList.add("inner");
 
-    // Random size between 2px and 7px
-    const size = Math.random() * 5 + 2;
+    // Random size between 2px and 9px
+    const size = Math.random() * 7 + 2;
     inner.style.width = `${size}px`;
     inner.style.height = `${size}px`;
 
     // Random horizontal position
     snowFlake.style.left = Math.random() * window.innerWidth + "px";
 
-    // Random falling duration between 5s and 10s
-    const duration = Math.random() * 5 + 5;
+    // Random falling duration between 5s and 20s
+    const duration = Math.random() * 5 + 15;
     snowFlake.style.animationDuration = `${duration}s`;
 
     // Random rotation duration

@@ -1,13 +1,36 @@
-/* =========================================
-   SKILLS SECTION 
-========================================= */
+/* =========================================================
+=======================  SKILLS SECTION  ===================
+=========================================================
+Styles for Skills Section including titles, groups,
+skill cards, icons, progress bars, and hover effects.
 
+Table of Content (Skills):
+1. Base Layout
+2. Section Titles
+3. Groups Wrapper
+4. Group Title
+5. Skill Items Grid
+6. Skill Card
+    6.1 Glow Effect
+    6.2 Hover Interactions
+7. Skill Icon
+8. Skill Name
+9. Progress Bar
+========================================================= */
+
+
+/* =========================================================
+1. BASE LAYOUT
+========================================================= */
 .skills {
-  padding: var(--spacing-xxl) 0;
   position: relative;
   z-index: 1;
 }
 
+
+/* =========================================================
+2. SECTION TITLES
+========================================================= */
 .skills__title {
   text-align: center;
   font-size: var(--font-size-xxl);
@@ -23,17 +46,19 @@
   margin: 0 auto var(--spacing-xxl);
 }
 
-/* ==========================
-    Groups Wrapper
-========================== */
+
+/* =========================================================
+3. GROUPS WRAPPER
+========================================================= */
 .skills__groups {
   display: grid;
   gap: var(--spacing-xxl);
 }
 
-/* ==========================
-    Group Title
-========================== */
+
+/* =========================================================
+4. GROUP TITLE
+========================================================= */
 .skills__group-title {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-md);
@@ -42,6 +67,7 @@
   padding-left: 1rem;
 }
 
+/* Vertical highlight bar */
 .skills__group-title::before {
   content: "";
   width: 6px;
@@ -53,18 +79,20 @@
   top: 0;
 }
 
-/* RTL fix */
+/* RTL Fix */
 html[dir="rtl"] .skills__group-title {
   padding-right: 1rem;
 }
+
 html[dir="rtl"] .skills__group-title::before {
   left: auto;
   right: 0;
 }
 
-/* ==========================
-    Skill Items Grid
-========================== */
+
+/* =========================================================
+5. SKILL ITEMS GRID
+========================================================= */
 .skills__items {
   display: grid;
   gap: var(--spacing-lg);
@@ -76,9 +104,10 @@ html[dir="rtl"] .skills__group-title::before {
   }
 }
 
-/* ==========================
-    Skill Card
-========================== */
+
+/* =========================================================
+6. SKILL CARD
+========================================================= */
 .skill__card {
   background: rgba(255, 255, 255, 0.1);
   padding: var(--spacing-lg);
@@ -87,18 +116,12 @@ html[dir="rtl"] .skills__group-title::before {
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
   cursor: default;
 }
 
-.skill__card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 
-    0px 0px 20px rgba(0, 200, 255, 0.35),
-    0px 0px 25px rgba(0, 100, 255, 0.4);
-}
-
-/* Glow circle inside card */
+/* 6.1 Glow Circle Inside Card */
 .skill__card::before {
   content: "";
   position: absolute;
@@ -113,19 +136,29 @@ html[dir="rtl"] .skills__group-title::before {
   transition: opacity var(--transition-fast);
 }
 
+/* 6.2 Hover Interactions */
+.skill__card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0px 0px 20px rgba(0, 200, 255, 0.35),
+    0px 0px 25px rgba(0, 100, 255, 0.4);
+}
+
 .skill__card:hover::before {
   opacity: 0.6;
 }
 
-/* ==========================
-    Skill Icon (FontAwesome)
-========================== */
+
+/* =========================================================
+7. SKILL ICON
+========================================================= */
 .skill__icon i {
   font-size: 2.2rem;
   color: var(--color-tertiary);
   margin-bottom: var(--spacing-sm);
   display: inline-block;
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition: color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .skill__card:hover .skill__icon i {
@@ -133,17 +166,20 @@ html[dir="rtl"] .skills__group-title::before {
   transform: scale(1.15);
 }
 
-/* ==========================
-    Skill Name
-========================== */
+
+/* =========================================================
+8. SKILL NAME
+========================================================= */
 .skill__card h4 {
   color: var(--color-text-inverse);
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-sm);
 }
-/* ==========================
-    Progress Bar
-========================== */
+
+
+/* =========================================================
+9. PROGRESS BAR
+========================================================= */
 .skill__bar {
   width: 100%;
   height: 8px;
@@ -156,8 +192,11 @@ html[dir="rtl"] .skills__group-title::before {
 .skill__bar span {
   display: block;
   height: 100%;
-  width: 0%; /* Start from 0% */
-  background: linear-gradient(90deg, var(--color-tertiary), var(--color-primary));
+  width: 0%;
+  /* Start from 0% */
+  background: linear-gradient(90deg,
+      var(--color-tertiary),
+      var(--color-primary));
   border-radius: var(--radius-full);
-  transition: width 1.2s ease-out; /* Smooth animation */
+  transition: width 1.2s ease-out;
 }

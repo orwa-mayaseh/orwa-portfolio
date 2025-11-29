@@ -7,10 +7,12 @@
   <title data-i18n="page_title">Orwa Mayaseh | Front End Developer</title>
 
   <!-- External CSS Files -->
-  <link rel="stylesheet" href="./assets-extra/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/fonts.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
-  <link rel="stylesheet" href="./assets/css/components.css" />
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/header.css">
+  <link rel="stylesheet" href="./assets/css/aside.css">
   <link rel="stylesheet" href="./assets/css/hero.css" />
   <link rel="stylesheet" href="./assets/css/about.css">
   <link rel="stylesheet" href="./assets/css/skills.css">
@@ -84,7 +86,7 @@
   <main class="site__main">
 
     <!-- Hero Section: START -->
-    <section id="hero" class="hero reveal">
+    <section id="hero" class="hero pd-y reveal">
       <div class="container">
 
         <div class="hero__content reveal">
@@ -98,7 +100,7 @@
 
           <div class="hero__actions reveal">
             <a data-i18n="btn_projects" href="#projects" class="hero__btn hero__btn--primary">View Projects</a>
-            <a data-i18n="btn_contact" href="#" class="hero__btn hero__btn--secondary">Contact Me</a>
+            <a data-i18n="btn_contact" href="#contact" class="hero__btn hero__btn--secondary">Contact Me</a>
           </div>
 
         </div>
@@ -117,7 +119,7 @@
     <!-- Hero Section: END -->
 
     <!-- About section: START-->
-    <section id="about" class="about">
+    <section id="about" class="about pd-y">
       <div class="container">
         <div class="about__wrapper">
 
@@ -132,7 +134,7 @@
           </div>
 
           <div class="about__content reveal">
-            <h2 class="about__title" data-i18n="about_title">About Me</h2>
+            <h2 class="about__title title" data-i18n="about_title">About Me</h2>
 
             <p class="about__text" data-i18n="about_desc">
               I'm a passionate Front-End Developer focused on building real projects and improving my skills every day.
@@ -169,10 +171,10 @@
     <!-- About section: END -->
 
     <!-- Skills section: START-->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills pd-y">
       <div class="container">
 
-        <h2 class="skills__title reveal" data-i18n="skills_title">Skills</h2>
+        <h2 class="skills__title reveal title" data-i18n="skills_title">Skills</h2>
         <p class="skills__subtitle reveal" data-i18n="skills_subtitle">
           A focused set of front-end skills I continuously evolve through real projects.
         </p>
@@ -301,11 +303,11 @@
     <!-- Skills section: END -->
 
     <!-- Projects section: START-->
-    <section class="projects reveal" id="projects">
+    <section class="projects pd-y reveal" id="projects">
       <div class="container">
 
         <header class="projects__intro">
-          <h2 class="projects__title" data-i18n="projects_title">Featured Projects</h2>
+          <h2 class="projects__title title" data-i18n="projects_title">Featured Projects</h2>
           <p class="projects__subtitle" data-i18n="projects_subtitle">
             High-quality, interactive web experiences built with modern front-end technologies.
           </p>
@@ -377,12 +379,12 @@
     <!-- Projects section: END -->
 
     <!-- Contact section: START-->
-    <section id="contact" class="contact reveal">
+    <section id="contact" class="contact pd-y reveal">
       <div class="container">
 
         <!-- Intro Title + Subtitle -->
         <div class="contact__intro reveal">
-          <h2 class="contact__title" data-i18n="contact_title">Contact</h2>
+          <h2 class="contact__title title" data-i18n="contact_title">Contact</h2>
           <p class="contact__subtitle" data-i18n="contact_subtitle">
             Feel free to reach out for collaboration!
           </p>
@@ -452,12 +454,12 @@
   <!-- Main: END -->
 
   <!-- Footer: START -->
-  <footer class="site__footer reveal">
+  <footer class="site__footer pd-y reveal">
     <div class="container footer__container">
 
       <!-- LEFT SIDE: Branding -->
       <div class="footer__brand">
-        <h3 class="footer__title" data-i18n="footer_title">Orwa Mayasah</h3>
+        <h2 class="footer__title" data-i18n="footer_title">Orwa Mayasah</h2>
         <p class="footer__desc" data-i18n="footer_desc">
           Front-End Developer — Building modern, fast and clean web interfaces.
         </p>
@@ -465,18 +467,18 @@
 
       <!-- MIDDLE: Quick Links -->
       <div class="footer__column">
-        <h4 class="footer__column-title" data-i18n="footer_quick_links">Quick Links</h4>
+        <h3 class="footer__column-title" data-i18n="footer_quick_links">Quick Links</h3>
         <ul class="footer__links">
-          <li><a href="#projects" data-i18n="footer_link_projects">Projects</a></li>
-          <li><a href="#about" data-i18n="footer_link_about">About Me</a></li>
-          <li><a href="#services" data-i18n="footer_link_services">Services</a></li>
-          <li><a href="#contact" data-i18n="footer_link_contact">Contact</a></li>
+          <li><a href="#projects" data-i18n="footer_link_projects" class="quick__link">Projects</a></li>
+          <li><a href="#about" data-i18n="footer_link_about" class="quick__link">About Me</a></li>
+          <li><a href="#services" data-i18n="footer_link_services" class="quick__link">Services</a></li>
+          <li><a href="#contact" data-i18n="footer_link_contact" class="quick__link">Contact</a></li>
         </ul>
       </div>
 
       <!-- RIGHT SIDE: Social Links -->
       <div class="footer__column">
-        <h4 class="footer__column-title" data-i18n="footer_socials">Social Media</h4>
+        <h3 class="footer__column-title" data-i18n="footer_socials">Social Media</h3>
         <div class="footer__socials">
           <a href="https://www.linkedin.com/in/orwamayaseh" target="_blank" data-i18n="footer_social_link_linkedin"
             class="social__link">LinkedIn</a>

@@ -86,7 +86,6 @@ export const translations = {
     footer_social_link_telegram: "Telegram",
     footer_social_link_instagram: "Instagram",
     footer_social_link_x: "Twitter / X",
-    footer_copyright: "© Orwa Mayasah — All Rights Reserved",
   },
 
   ar: {

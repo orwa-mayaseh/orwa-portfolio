@@ -1,10 +1,33 @@
-/* ========== ABOUT SECTION ========== */
+/* =========================================================
+=======================  ABOUT SECTION  ====================
+============================================================
+Styles for About section including layout, photo area,
+floating elements, and information detail cards.
 
+Table of Content (About):
+1. Base Layout
+2. Layout Wrapper
+3. Photo Area
+4. Floating Circles
+5. Content Area
+6. Detail Cards
+    6.1 Card Structure
+    6.2 Hover Effects
+    6.3 Label & Value Styles
+========================================================= */
+
+
+/* =========================================================
+1. BASE LAYOUT
+========================================================= */
 .about {
-    padding: var(--spacing-xxl) 0;
     position: relative;
 }
 
+
+/* =========================================================
+2. LAYOUT WRAPPER
+========================================================= */
 .about__wrapper {
     display: flex;
     flex-direction: column;
@@ -20,8 +43,10 @@
     }
 }
 
-/* ========== PHOTO AREA ========== */
 
+/* =========================================================
+3. PHOTO AREA
+========================================================= */
 .about__photo {
     position: relative;
     width: 260px;
@@ -39,7 +64,7 @@
     transition: transform var(--transition-normal);
 }
 
-/* Hover: rotate to 0 + soft glow */
+/* Hover effect */
 .about__photo-frame:hover {
     transform: rotate(0deg) scale(1.03);
     box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
@@ -51,8 +76,10 @@
     object-fit: cover;
 }
 
-/* FLOATING CIRCLES */
 
+/* =========================================================
+4. FLOATING CIRCLES
+========================================================= */
 .about__circle {
     position: absolute;
     border-radius: 50%;
@@ -60,6 +87,7 @@
     animation: float var(--transition-fast) infinite alternate;
 }
 
+/* --- Circle variations --- */
 .about__circle--1 {
     width: 80px;
     height: 80px;
@@ -87,6 +115,7 @@
     animation-duration: 6s;
 }
 
+/* Floating animation */
 @keyframes float {
     0% {
         transform: translateY(0) scale(1);
@@ -97,8 +126,10 @@
     }
 }
 
-/* ========== CONTENT AREA ========== */
 
+/* =========================================================
+5. CONTENT AREA
+========================================================= */
 .about__content {
     max-width: 600px;
 }
@@ -109,6 +140,10 @@
     color: var(--color-text-inverse);
 }
 
+.about__title.title::after {
+    left: 13%;
+}
+
 .about__text {
     color: var(--color-text-inverse);
     font-size: var(--font-size-lg);
@@ -116,11 +151,15 @@
     margin-bottom: var(--spacing-xl);
 }
 
-/* ========== DETAIL CARDS ========== */
 
+/* =========================================================
+6. DETAIL CARDS
+========================================================= */
+
+/* 6.1 Card Structure */
 .about__details {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-lg);
 }
 
@@ -130,21 +169,22 @@
     overflow: hidden;
     padding: 2px;
     background: rgba(255, 255, 255, 0.05);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
-
-/* Inner content */
-.about__detail > * {
+/* Inner card content */
+.about__detail>* {
     display: block;
     background: rgba(255, 255, 255, 0.05);
     padding: var(--spacing-md);
 }
 
-/* Hover effects */
+
+/* 6.2 Hover Effects */
 .about__detail:hover {
-    transform: translateY(-5px); /* micro interaction */
-    box-shadow: 0 0 22px rgba(0, 170, 255, 0.35); /* soft glow */
+    transform: translateY(-5px);
+    box-shadow: 0 0 22px rgba(0, 170, 255, 0.35);
 }
 
 .about__detail:hover .detail__label,
@@ -153,7 +193,8 @@
     transition: transform 0.25s ease;
 }
 
-/* Label & Value styles */
+
+/* 6.3 Label & Value Styles */
 .detail__label {
     font-size: var(--font-size-sm);
     color: var(--color-tertiary);
