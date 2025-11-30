@@ -37,7 +37,6 @@ body {
     color: var(--color-text-primary);
     background: var(--site-bg-gradient);
     position: relative;
-    /* reserve header space */
     min-height: 100vh;
 }
 
@@ -156,17 +155,18 @@ button {
 ============================================ */
 
 /* --- 2.1 Small Devices (≥576px) --- */
+@media (max-width: 320px) {
+    .container {
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 375px) {
     .container {
         max-width: 375px;
     }
 }
 
-@media (max-width: 320px) {
-    .container {
-        max-width: 300px;
-    }
-}
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -188,11 +188,13 @@ button {
         grid-template-rows: 60px 1fr auto;
     }
 
-    html[dir="rtl"] .site {
+    html[dir="rtl"] body .site {
         grid-template-areas:
             "header header"
-            "main aside";
-            grid-template-columns: 1fr 60px;
+            "main aside"
+            "footer footer";
+        grid-template-columns: 1fr 60px;
+
     }
 }
 

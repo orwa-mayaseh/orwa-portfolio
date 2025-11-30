@@ -143,6 +143,9 @@ Table of Content (About):
 .about__title.title::after {
     left: 13%;
 }
+html[dir="rtl"] .about__title.title::after {
+    display: none;
+}
 
 .about__text {
     font-size: var(--font-size-lg);

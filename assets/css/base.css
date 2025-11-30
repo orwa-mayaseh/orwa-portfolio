@@ -88,7 +88,7 @@ ol {
 
 /* --- 1.1 Colors --- */
 :root {
-  --color-primary: #0065f8;
+  --color-primary: #0065f8 ;
   --color-secondary: #00caff;
   --color-tertiary: #00ffde;
 
@@ -179,7 +179,7 @@ ol {
 
 @keyframes fall {
   to {
-    transform: translateY(700vh);
+    transform: translateY(100vh);
   }
 }
 

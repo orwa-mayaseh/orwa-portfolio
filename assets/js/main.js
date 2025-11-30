@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selector: ".reveal",
     rootMargin: "0px 0px -100px 0px",
     threshold: 0.1,
-    delay: 100,
+    delay: 50,
   });
 
   // Initialize Skills Progress Bar Reveal

@@ -17,7 +17,7 @@ Table of Content (Footer):
     1. Base Footer Wrapper
  =============================== */
 .site__footer {
-    padding-bottom: var(--spacing-md);
+    padding: var(--spacing-md) 0;
     border-top: 2px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -33,7 +33,7 @@ Table of Content (Footer):
 
 @media (min-width: 768px) {
     .footer__container {
-        grid-template-columns: 1.2fr 0.9fr 1fr;
+        grid-template-columns: 1.2fr 1fr 1fr;
         align-items: start;
     }
 }
@@ -65,6 +65,7 @@ Table of Content (Footer):
     opacity: 0.75;
     line-height: var(--line-height-lg);
     max-width: 90%;
+    color: var(--color-text-inverse);
 }
 
 /* ===============================
@@ -85,7 +86,7 @@ Table of Content (Footer):
 
 .quick__link:hover, .social__link:hover {
     opacity: 1;
-    transform: translateX(6px);
+    transform: translateX(8px);
     color: var(--color-tertiary);
 }   
 
@@ -95,6 +96,7 @@ Table of Content (Footer):
 .footer__bottom {
     padding-top: var(--spacing-lg);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: var(--spacing-md);
     text-align: center;
     direction: ltr !important;
 }
@@ -102,6 +104,7 @@ Table of Content (Footer):
 .footer__bottom p {
     font-size: var(--font-size-xs);
     opacity: 0.8;
+    color: var(--color-text-inverse);
 }
 
 .footer__bottom span {

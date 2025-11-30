@@ -53,8 +53,8 @@ html[dir="rtl"] .site__aside {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
+    background: var(--site-bg-gradient);
 }
-
 /* ============================================
    1. ASIDE LIST
 ============================================ */
